@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 7 - To-Do List</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="ffffgb">
-        <h3>my counter</h3>
-        <h1>0</h1>
-<div class=" all-bnt">
-    <button class="bnt-1">-Dcrease</button> <button class="bnt-2">Reset</button> <button class="bnt-3">+Increase</button>
-</div>
+  <div class="card">
+    <h2>My Day 7 Tasks ✅</h2>
+    <p class="small">What will you do today?</p>
+
+    <div class="input-area">
+      <input type="text" id="taskInput" placeholder="Type task here...">
+      <button id="addBtn">Add</button>
     </div>
-    
+
+    <ul id="taskList"></ul>
+
+    <div class="bottom">
+      <span id="total">0 tasks</span>
+      <button id="clearBtn">Clear All</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

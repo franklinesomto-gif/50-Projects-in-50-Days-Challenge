@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 10 - Grade Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Grade Calculator 📚</h1>
+    <p>Enter your scores (0 - 100)</p>
+    
+    <div class="inputs">
+      <div class="input-group">
+        <label>Math</label>
+        <input type="number" id="math" placeholder="0-100">
+      </div>
+      <div class="input-group">
+        <label>English</label>
+        <input type="number" id="english" placeholder="0-100">
+      </div>
+      <div class="input-group">
+        <label>Science</label>
+        <input type="number" id="science" placeholder="0-100">
+      </div>
+      <div class="input-group">
+        <label>Computer</label>
+        <input type="number" id="computer" placeholder="0-100">
+      </div>
+      <div class="input-group">
+        <label>History</label>
+        <input type="number" id="history" placeholder="0-100">
+      </div>
+    </div>
+
+    <button onclick="calculateGrade()">Calculate Grade</button>
+
+    <div id="result" class="hidden">
+      <h2>Total: <span id="total">0</span> / 500</h2>
+      <h2>Average: <span id="average">0</span>%</h2>
+      <h2>Grade: <span id="grade">-</span></h2>
+      <p id="remark"></p>
+    </div>
+  </div>
+</body>
+</html>

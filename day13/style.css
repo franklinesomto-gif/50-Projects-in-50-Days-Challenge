@@ -1,0 +1,72 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; }
+
+body {
+  background: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.card {
+  background: white;
+  width: 100%;
+  max-width: 650px;
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.new-btn {
+  background: #2f80ed;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.section {
+  color: #8a8a8a;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin: 40px 0 20px 0;
+}
+
+.note {
+  padding: 22px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.note.last { border-bottom: none; }
+
+.note h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.note p {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note span {
+  color: #888;
+  font-size: 13px;
+}

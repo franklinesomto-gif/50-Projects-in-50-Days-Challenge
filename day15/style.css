@@ -1,7 +1,21 @@
 
+* { margin:0;
+     padding:0; 
+     box-sizing:border-box;
+     }
 
-* { margin:0; padding:0; box-sizing:border-box; }
 body{
+.box{
+  background:#1e293b;
+  padding:25px;
+  border-radius:15px;
+  width:320px;
+  color:white;
+}
+h2{ text-align:center; margin-bottom:20px; 
+}
+
+
   background:#0f172a;
   display:flex;
   justify-content:center;

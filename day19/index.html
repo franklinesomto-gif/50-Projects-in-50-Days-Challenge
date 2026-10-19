@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 19 - Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Currency Converter</h1>
+    <p class="subtitle">Day 19 - HTML & CSS Only</p>
+
+    <div class="converter">
+      <div class="field">
+        <label>Amount</label>
+        <input type="number" value="100" placeholder="Enter amount">
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>From</label>
+          <select>
+            <option selected>USD - US Dollar</option>
+            <option>NGN - Nigerian Naira</option>
+            <option>EUR - Euro</option>
+            <option>GBP - British Pound</option>
+            <option>CAD - Canadian Dollar</option>
+          </select>
+        </div>
+
+        <div class="swap">⇄</div>
+
+        <div class="field">
+          <label>To</label>
+          <select>
+            <option>USD - US Dollar</option>
+            <option selected>NGN - Nigerian Naira</option>
+            <option>EUR - Euro</option>
+            <option>GBP - British Pound</option>
+            <option>CAD - Canadian Dollar</option>
+          </select>
+        </div>
+      </div>
+
+      <button>Convert Now</button>
+
+      <div class="result">
+        <p class="big">100 USD = 158,000 NGN</p>
+        <p class="small">1 USD = 1,580 NGN • Static demo (HTML/CSS only)</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

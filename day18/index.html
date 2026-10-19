@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 18 - Form Validation System</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <div class="container">
-    <h1>Form Validation Converter</h1>
-    
+    <h1>Form Validation System</h1>
+    <p class="subtitle">Day 18 - HTML & CSS Only</p>
+
     <form>
-      <label>Enter Meters</label>
-      <input type="number" required min="1" placeholder="e.g. 1000">
-      
-      <div class="result-box">
-        <p>Kilometers: <b>1 km</b></p>
-        <p>Centimeters: <b>100,000 cm</b></p>
-        <p>Feet: <b>3,280.84 ft</b></p>
-        <small>Example result - real calculation needs JS</small>
+      <div class="input-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required minlength="3" placeholder="Enter your full name">
       </div>
 
-      <button>Convert</button>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required placeholder="example@email.com">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required minlength="6" placeholder="Min 6 characters">
+      </div>
+
+      <div class="input-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required pattern="[0-9]{11}" placeholder="e.g. 08012345678">
+      </div>
+
+      <button type="submit">Submit</button>
+
+      <p class="note">Validation: required fields, email format, min length, 11-digit phone - all works without JS</p>
     </form>
   </div>
+
 </body>
 </html>

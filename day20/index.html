@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 20 - Search App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <h2>Day 20 <span>Search App</span></h2>
+  <p>Search your 50 Days projects</p>
+
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Search e.g. calculator, portfolio...">
+  </div>
+
+  <div class="list" id="list">
+    <div class="item" data-name="frankline">👨‍💻 Frankline - Software Student</div>
+<div class="item" data-name="ph">📍 Port Harcourt</div>
+<div class="item" data-name="fitness">💪 Fitness Coach</div>
+    <div class="item" data-name="portfolio">📁 Day 2 - Portfolio Website</div>
+    <div class="item" data-name="calculator">🧮 Day 10 - Calculator</div>
+    <div class="item" data-name="current account bank">🏦 Day 15 - Current Account App</div>
+    <div class="item" data-name="todo list taskflow">✅ Day 7 - To-Do List</div>
+    <div class="item" data-name="landing page">🚀 Day 8 - Landing Page</div>
+    <div class="item" data-name="quiz table">📊 Day 12 - Quiz Table</div>
+    <div class="item" data-name="search application">🔍 Day 20 - Search Application (Today)</div>
+  </div>
+</div>
+
+<script>
+  const search = document.getElementById('search');
+  const items = document.querySelectorAll('.item');
+  
+  search.addEventListener('input', () => {
+    let q = search.value.toLowerCase();
+    items.forEach(i => {
+      i.style.display = i.dataset.name.includes(q) ? 'block' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

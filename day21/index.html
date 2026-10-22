@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 21 - Movie Search App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>🎬 Day 21 <span>Movie Search</span></h2>
+  <input type="text" id="search" placeholder="Search movie e.g. Avengers, John Wick...">
+  <div class="movies" id="movies"></div>
+</div>
+
+<script>
+ const moviesData = [
+  {title:"Avengers Endgame", year:"2019", poster:"https://image.tmdb.org/t/p/w300/or06FN3Dka5tukK1e9sl16pB3iy.jpg"},
+  {title:"John Wick 4", year:"2023", poster:"https://image.tmdb.org/t/p/w300/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg"},
+  {title:"Fast X", year:"2023", poster:"https://image.tmdb.org/t/p/w300/fiVW06jE7z9YnO4trhaMEdclSiC.jpg"},
+  {title:"Spider-Man No Way Home", year:"2021", poster:"https://image.tmdb.org/t/p/w300/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"}
+];
+
+
+const moviesEl = document.getElementById('movies');
+const search = document.getElementById('search');
+
+function showMovies(list){
+  moviesEl.innerHTML = list.map(m => `
+    <div class="card">
+      <img src="${m.poster}" alt="${m.title}">
+      <h4>${m.title}</h4>
+      <p>${m.year}</p>
+    </div>
+  `).join('');
+}
+
+showMovies(moviesData);
+
+search.addEventListener('input', () => {
+  let q = search.value.toLowerCase();
+  let filtered = moviesData.filter(m => m.title.toLowerCase().includes(q));
+  showMovies(filtered);
+});
+</script>
+
+</body>
+</html>

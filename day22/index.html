@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 22 - GitHub Profile Finder</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#0f172a;
+  display:flex;
+  justify-content:center;
+  padding:40px 15px;
+  color:white;
+  margin:0;
+}
+.container{width:100%; max-width:600px; text-align:center}
+h2{font-size:28px}
+h2 span{color:#38bdf8}
+#search{
+  width:100%;
+  padding:14px 18px;
+  border-radius:25px;
+  border:none;
+  outline:none;
+  font-size:16px;
+  box-sizing:border-box;
+  margin:20px 0;
+}
+.card{
+  background:#1e293b;
+  border-radius:16px;
+  padding:25px;
+  margin-top:20px;
+  text-align:left;
+}
+.profile{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.profile img{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  border:3px solid #38bdf8;
+}
+.info h3{margin:0; font-size:22px}
+.info p{color:#94a3b8; margin:5px 0}
+.stats{
+  display:flex;
+  gap:15px;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
+.stat{
+  background:#0f172a;
+  padding:10px 15px;
+  border-radius:10px;
+  text-align:center;
+  min-width:70px;
+}
+.stat b{display:block; font-size:18px; color:#38bdf8}
+a{color:#38bdf8; text-decoration:none}
+.error{color:#f87171; margin-top:20px}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>💻 Day 22 <span>GitHub Finder</span></h2>
+  <input type="text" id="search" placeholder="Enter GitHub username e.g. torvalds, dan... and press Enter">
+  <div id="result"></div>
+</div>
+
+<script>
+const search = document.getElementById('search');
+const result = document.getElementById('result');
+
+async function getUser(username){
+  result.innerHTML = "<p>Loading...</p>";
+  try{
+    const res = await fetch(`https://api.github.com/users/${username}`);
+    if(!res.ok) throw new Error("User not found");
+    const data = await res.json();
+    
+    result.innerHTML = `
+      <div class="card">
+        <div class="profile">
+          <img src="${data.avatar_url}" alt="${data.login}">
+          <div class="info">
+            <h3>${data.name || data.login}</h3>
+            <p>@${data.login}</p>
+            <p>${data.bio || "No bio"}</p>
+            <a href="${data.html_url}" target="_blank">View Profile</a>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>${data.followers}</b>Followers</div>
+          <div class="stat"><b>${data.following}</b>Following</div>
+          <div class="stat"><b>${data.public_repos}</b>Repos</div>
+        </div>
+      </div>
+    `;
+  }catch(e){
+    result.innerHTML = `<p class="error">❌ User not found. Try "torvalds" or "facebook"</p>`;
+  }
+}
+
+search.addEventListener('keyup', (e) => {
+  if(e.key === 'Enter' && search.value.trim()){
+    getUser(search.value.trim());
+  }
+});
+
+// Show default
+getUser("octocat");
+</script>
+
+</body>
+</html>

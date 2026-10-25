@@ -11,7 +11,7 @@ body { background:#F5F8FF; display:flex; justify-content:center; }
 .nav-icons { display:flex; gap:12px; }
 .icon-btn, .avatar { width:36px; height:36px; border:none; border-radius:50%; cursor:pointer; background:#FFF0E0; }
 
-/* HERO */
+
 .hero { display:flex; justify-content:space-between; align-items:center; padding:30px 20px; gap:20px; }
 .small-title { font-size:11px; letter-spacing:1.5px; color:#6B7A99; font-weight:600; margin-bottom:8px; }
 .hero h1 { font-size:38px; line-height:1.1; color:#0F1D40; }

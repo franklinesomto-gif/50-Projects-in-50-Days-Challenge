@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aba QR Generator - Fashion</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+  body{
+    background:#f6f5f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+  }
+  .card{
+    background:white;
+    width:100%;
+    max-width:420px;
+    padding:30px 25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    border:1px solid #eee;
+  }
+  h1{font-size:22px;text-align:center;margin-bottom:5px;}
+  p.sub{text-align:center;color:#888;font-size:13px;margin-bottom:20px;}
+  label{font-size:13px;font-weight:600;margin-bottom:6px;display:block;color:#333;}
+  input{
+    width:100%;
+    padding:14px;
+    border:1.5px solid #ddd;
+    border-radius:12px;
+    font-size:15px;
+    outline:none;
+    transition:0.2s;
+  }
+  input:focus{border-color:#000;}
+  .btn{
+    width:100%;
+    padding:14px;
+    background:#000;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    font-weight:700;
+    font-size:15px;
+    margin-top:15px;
+    cursor:pointer;
+    transition:0.2s;
+  }
+  .btn:hover{background:#222;}
+  .btn-download{
+    background:#fff;
+    color:#000;
+    border:1.5px solid #000;
+    margin-top:10px;
+    display:none;
+  }
+  #qrcode{
+    display:flex;
+    justify-content:center;
+    margin-top:25px;
+    padding:20px;
+    background:#fff;
+    border-radius:15px;
+    min-height:50px;
+  }
+  #qrcode img{border-radius:8px;}
+  .footer{text-align:center;margin-top:20px;font-size:11px;color:#aaa;}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>QR Generator</h1>
+  <p class="sub">For Aba Fashion & Business</p>
+  
+  <label>Enter WhatsApp, Link, or Text</label>
+  <input type="text" id="qrText" placeholder="e.g. https://wa.me/2348012345678 or @yourbrand">
+  
+  <button class="btn" onclick="generateQR()">Generate QR Code</button>
+  <button class="btn btn-download" id="downloadBtn" onclick="downloadQR()">Download QR Image</button>
+  
+  <div id="qrcode"></div>
+  
+  <div class="footer">Made for Aba Hustle - No Harassment</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  let qrcodeObj = null;
+  
+  function generateQR(){
+    const text = document.getElementById('qrText').value.trim();
+    const qrDiv = document.getElementById('qrcode');
+    const dlBtn = document.getElementById('downloadBtn');
+    
+    if(text === ""){
+      alert("Oga, put something first na!");
+      return;
+    }
+    
+    qrDiv.innerHTML = "";
+    qrcodeObj = new QRCode(qrDiv, {
+      text: text,
+      width: 200,
+      height: 200,
+      colorDark : "#000000",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+    });
+    
+    dlBtn.style.display = "block";
+  }
+  
+  function downloadQR(){
+    const img = document.querySelector('#qrcode img');
+    if(img){
+      const link = document.createElement('a');
+      link.download = 'aba-qr-code.png';
+      link.href = img.src;
+      link.click();
+    }
+  }
+</script>
+
+</body>
+</html>

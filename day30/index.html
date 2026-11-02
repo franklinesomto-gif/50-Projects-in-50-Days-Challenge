@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>EduPulse</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#" class="nav-item active"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a>
+                    <a href="#" class="nav-item"><i class="fa-solid fa-user-graduate"></i> <span>Students</span></a>
+                    <a href="#" class="nav-item"><i class="fa-solid fa-chalkboard-user"></i> <span>Teachers</span></a>
+                    <a href="#" class="nav-item"><i class="fa-solid fa-book"></i> <span>Classes</span></a>
+                </nav>
+            </div>
+            <div class="sidebar-footer">
+                <div class="user-avatar">A</div>
+                <div class="user-info">
+                    <p class="user-name">Admin Panel</p>
+                    <p class="user-email">admin@school.com</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN WINDOW -->
+        <div class="main-layout">
+            
+            <!-- HEADER -->
+            <header class="top-header">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search students...">
+                </div>
+                <div class="header-actions">
+                    <button class="btn-primary"><i class="fa-solid fa-plus"></i> Add Student</button>
+                </div>
+            </header>
+
+            <!-- CONTAINER -->
+            <main class="content-container">
+                <div class="greeting">
+                    <h1>Academic Overview</h1>
+                    <p>Welcome back! Here is a summary look at your institution today.</p>
+                </div>
+
+                <!-- KPI CARDS -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="card-details">
+                            <p class="card-title">Total Students</p>
+                            <h3 class="card-value">1,245</h3>
+                        </div>
+                        <div class="card-icon blue-bg"><i class="fa-solid fa-user-graduate"></i></div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="card-details">
+                            <p class="card-title">Attendance Rate</p>
+                            <h3 class="card-value">94.2%</h3>
+                        </div>
+                        <div class="card-icon green-bg"><i class="fa-solid fa-calendar-check"></i></div>
+                    </div>
+                </div>
+
+                <!-- DATA CONTAINER -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>ID Number</th>
+                                <th>Class Room</th>
+                                <th>GPA Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="student-profile">
+                                    <div class="avatar-circle">JD</div>
+                                    <div><strong>Jane Doe</strong><br><small>jane@school.com</small></div>
+                                </td>
+                                <td>#STU-94021</td>
+                                <td>Grade 12-A</td>
+                                <td><strong>3.91</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BlogFlow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1 class="logo">Blog<span>Flow</span></h1>
+      <nav>
+        <a class="active" href="#">Overview</a>
+        <a href="#">Posts</a>
+        <a href="#">Comments</a>
+        <a href="#">Analytics</a>
+        <a href="#">Media</a>
+        <a href="#">Settings</a>
+      </nav>
+      <a class="logout" href="#">Logout</a>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="top">
+        <h2>Dashboard</h2>
+        <div class="search">Search posts, users, analytics...</div>
+      </header>
+
+      <p class="section-title">Overview</p>
+      <div class="stats">
+        <div class="stat"><span>Total Posts</span><h3>128</h3><small>+12 this month</small></div>
+        <div class="stat"><span>Drafts</span><h3>12</h3><small>4 updated today</small></div>
+        <div class="stat"><span>Total Views</span><h3>24.5k</h3><small>+2.1k this week</small></div>
+        <div class="stat"><span>Comments</span><h3>892</h3><small>+48 this week</small></div>
+      </div>
+
+      <div class="header-row">
+        <h3>Recent Blog Posts</h3>
+        <button class="new-btn">+ New Post</button>
+      </div>
+
+      <div class="posts">
+        <div class="post-card">
+          <span class="badge published">Published</span>
+          <h4>Getting Started with Next.js 14</h4>
+          <p>by Alex Morgan • 2 days ago • 1.2k views</p>
+        </div>
+        <div class="post-card">
+          <span class="badge draft">Draft</span>
+          <h4>Designing for Accessibility in 2024</h4>
+          <p>by Priya Patel • 5 hours ago • 0 views</p>
+        </div>
+        <div class="post-card">
+          <span class="badge published">Published</span>
+          <h4>Optimizing Database Queries for Speed</h4>
+          <p>by Marcus Chen • 1 week ago • 3.4k views</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

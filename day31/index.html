@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration Apl</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
+    <div class="container">
         <h2>Student Registration</h2>
         <form>
-            <label for="name">Name:</label>
-             <input class="plachoder"rgl;rgnmgll;oik>
+            <label for="name"> Full Name:</label>
+             <input type="text" placeholder="Enter your full name" required> <br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email">Email Address:</label>
+            <input type="text" placeholder="Enter your Email" required> <br>
 
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone">
+            <label for="studentld">student lD:</label>
+            <input type="text" placeholder="e.g 1287599" required> <br>
 
-            <button type="submit">Register</button>
+            <label for="course">Course:</label>
+            <select>
+                <option value="computer science">Computer Science</option>
+                <option value="mathematics">Mathematics</option>
+                <option value="physics">Physics</option>
+                <option value="chemistry">Chemistry</option>
+                </select> <br>
+
+            <button type="submit">Register </button>
         </form>
     </div>
 </body>
+
 </html>
